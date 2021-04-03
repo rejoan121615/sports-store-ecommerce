@@ -1,0 +1,112 @@
+$icons_size: 2rem;
+
+#header {
+  background-color: #0000005c;
+  .items_container {
+    padding-top: 12px;
+    display: grid;
+    grid-template-columns: repeat( 3, 1fr);
+    grid-template-rows: 50px 80px;
+    grid-template-areas: "brand brand menu_icon" "social social social";
+    color: white;
+    align-items: center;
+        // responsive 
+    @include resp ($sm) {
+      grid-template: "brand social menu_icon" 1fr / 2fr 4fr 0.5fr;
+      @include padX(25px, 30px);
+      grid-column-gap: 35px;
+    }
+    @include resp ($lg) {
+      grid-template: "menu_icon brand menu social" 1fr / 50px 3fr auto 7fr;
+    }
+    .menu_icon {
+      grid-area: menu_icon;
+      overflow: hidden;
+      button {
+        background: transparent;
+        border: none;
+        cursor: pointer;
+        display: block;
+        float: right;
+      }
+      @include resp ($lg) {
+        float: left;
+      }
+      i {
+        font-size: $icons_size;
+        color: white;
+        display: inline-block;
+      }            
+        
+        // brand 
+    }
+    .brand {
+      grid-area: brand;
+      font-family: $brand;
+      color: white;
+      font-size: 2rem;
+      i {
+        font-size: 2.2rem;
+        margin-right: 6px;
+      }
+
+    }
+    // social network 
+    .social_network {
+      grid-area: social;
+      @include flex;
+      width: 100%;
+      max-width: 400px;
+            // responsive 
+      @include resp ($x_sm) {
+        max-width: 500px;
+        @include center;
+      }
+      @include resp ($lg) {
+        width: 100%;
+        margin-left: 0;
+        margin-right: 0;
+        justify-self: end;
+      }
+      a {
+        @include resp ($lg);
+        width: (100%/7);
+        text-align: center;
+        @include padX(15px, 15px);
+                // social icons 
+        &:first-child {
+          border-left: 2.5px solid rgba( #FFFFFF, 0.5);
+        }
+        i {
+          color: white;
+          font-size: ($icons_size - 0.3);
+          display: inline-block;
+        }
+      }
+      .chart {
+        border-left: 2.5px solid rgba( #FFFFFF, 0.5);
+        border-right: 2.5px solid rgba( #FFFFFF, 0.5);
+      }
+    }
+    #nav_bar {
+      display: none;
+      // responsive 
+      @include resp ($lg) {
+        @include flex;
+        justify-self: start;
+      }
+      a {
+        font-family: $MontBold;
+        color: white;
+        font-size: 0.8rem;
+        text-align: center;
+        text-transform: uppercase;
+        // responsive 
+        @include resp ($lg) {
+          padding: 15px;
+        }
+      }
+      
+    }
+  }
+}
