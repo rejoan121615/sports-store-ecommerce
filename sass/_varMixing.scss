@@ -52,7 +52,7 @@ $maxWidth: "1700px";
     }
 }
 // padding
-.conainer {
+.container {
     @extend %container;
 }
 @mixin padX($t, $b) {
@@ -100,3 +100,35 @@ $header: PoppinsBold;
 $brand: PoppinsBlack;
 $btnFont: MontserratRegular;
 $MontBold: MontserratBold;
+
+
+// color variable 
+$blue: #3954d9;
+
+
+// header style 
+@mixin header ($font: PoppinsBold, $size: 2rem, $color: white, $align: center) {
+  font-family: $font;
+  text-transform: uppercase;
+  font-size: $size;
+  color: $color;
+  text-align: $align;
+  @content;
+}
+
+// btn style 
+.btn_wrapper {
+    text-align: center;
+}
+
+.btn {
+    font-family: MontserratRegular;
+    font-size: 14px;
+    color: white;
+    text-align: center;
+    display: inline-block;
+    padding: 15px 30px;
+    border-radius: 45px;
+    text-transform: uppercase;
+    background-color: $blue;
+}

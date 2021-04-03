@@ -1,0 +1,77 @@
+#main {
+    // height: 400px;
+    .container {
+        height: 600px;
+        @include resp($sm) {
+            height: 700px;
+        }
+
+        @include resp($lg) {
+            height: 900px;
+        }
+        @include resp($xl) {
+            height: 900px;
+        }
+        .texts {
+            width: 100%;
+            margin-top: 175px;
+            // responsive
+            @include resp($sm) {
+                margin-top: initial;
+                padding-top: 180px;
+            }
+            @include resp($md) {
+                width: 50%;
+            }
+            @include resp($lg) {
+                margin-top: 225px;
+            }
+
+            @include resp($xl) {
+                margin-top: 200px;
+            }
+
+            // responsive
+
+            h1 {
+                @include header;
+                font-size: 90px;
+                line-height: 70px;
+                @include resp($x_sm) {
+                    font-size: 95px;
+                    line-height: 75px;
+                }
+                @include resp($sm) {
+                    font-size: 120px;
+                    line-height: 95px;
+                }
+                @include resp($md) {
+                    font-size: 125px;
+                    line-height: 110px;
+                }
+                @include resp($xl) {
+                    font-size: 170px;
+                    line-height: 135px;
+                }
+            }
+            h6 {
+                @include header;
+                font-size: 1.2rem;
+                margin-top: 25px;
+
+                // responsive
+                @include resp($sm) {
+                    font-size: 24px;
+                    letter-spacing: 2.5px;
+                }
+                @include resp($lg) {
+                    letter-spacing: 7px;
+                }
+            }
+        }
+        // btn wrapper
+        .btn_wrapper {
+            margin-top: 55px;
+        }
+    }
+}

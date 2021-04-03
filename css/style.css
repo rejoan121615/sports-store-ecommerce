@@ -1,22 +1,22 @@
-.conainer {
+.container {
   width: 100%;
   padding-left: 20px;
   padding-right: 20px;
 }
 @media only screen and (min-width: 576px) {
-  .conainer {
+  .container {
     padding-left: 30px;
     padding-right: 30px;
   }
 }
 @media only screen and (min-width: 768px) {
-  .conainer {
+  .container {
     padding-left: 40px;
     padding-right: 40px;
   }
 }
 @media only screen and (min-width: 992px) {
-  .conainer {
+  .container {
     width: 90%;
     padding-left: 0px;
     padding-right: 0px;
@@ -25,12 +25,12 @@
   }
 }
 @media only screen and (min-width: 1400px) {
-  .conainer {
+  .container {
     width: 85%;
   }
 }
 @media only screen and (min-width: 1900px) {
-  .conainer {
+  .container {
     max-width: 1700px;
   }
 }
@@ -67,6 +67,22 @@
   font-family: PoppinsBoldItalic;
   src: url("../fonts/Poppins-BoldItalic.otf");
 }
+.btn_wrapper {
+  text-align: center;
+}
+
+.btn {
+  font-family: MontserratRegular;
+  font-size: 14px;
+  color: white;
+  text-align: center;
+  display: inline-block;
+  padding: 15px 30px;
+  border-radius: 45px;
+  text-transform: uppercase;
+  background-color: #3954d9;
+}
+
 #header {
   background-color: #0000005c;
 }
@@ -89,12 +105,17 @@
 }
 @media only screen and (min-width: 1200px) {
   #header .items_container {
-    grid-template: "menu_icon brand menu social" 1fr/50px 3fr auto 7fr;
+    grid-template: "brand menu social" 1fr/3fr auto 7fr;
   }
 }
 #header .items_container .menu_icon {
   grid-area: menu_icon;
   overflow: hidden;
+}
+@media only screen and (min-width: 1200px) {
+  #header .items_container .menu_icon {
+    display: none;
+  }
 }
 #header .items_container .menu_icon button {
   background: transparent;
@@ -186,6 +207,106 @@
   #header .items_container #nav_bar a {
     padding: 15px;
   }
+}
+
+#main .container {
+  height: 600px;
+}
+@media only screen and (min-width: 768px) {
+  #main .container {
+    height: 700px;
+  }
+}
+@media only screen and (min-width: 1200px) {
+  #main .container {
+    height: 900px;
+  }
+}
+@media only screen and (min-width: 1400px) {
+  #main .container {
+    height: 900px;
+  }
+}
+#main .container .texts {
+  width: 100%;
+  margin-top: 175px;
+}
+@media only screen and (min-width: 768px) {
+  #main .container .texts {
+    margin-top: initial;
+    padding-top: 180px;
+  }
+}
+@media only screen and (min-width: 992px) {
+  #main .container .texts {
+    width: 50%;
+  }
+}
+@media only screen and (min-width: 1200px) {
+  #main .container .texts {
+    margin-top: 225px;
+  }
+}
+@media only screen and (min-width: 1400px) {
+  #main .container .texts {
+    margin-top: 200px;
+  }
+}
+#main .container .texts h1 {
+  font-family: PoppinsBold;
+  text-transform: uppercase;
+  font-size: 2rem;
+  color: white;
+  text-align: center;
+  font-size: 90px;
+  line-height: 70px;
+}
+@media only screen and (min-width: 576px) {
+  #main .container .texts h1 {
+    font-size: 95px;
+    line-height: 75px;
+  }
+}
+@media only screen and (min-width: 768px) {
+  #main .container .texts h1 {
+    font-size: 120px;
+    line-height: 95px;
+  }
+}
+@media only screen and (min-width: 992px) {
+  #main .container .texts h1 {
+    font-size: 125px;
+    line-height: 110px;
+  }
+}
+@media only screen and (min-width: 1400px) {
+  #main .container .texts h1 {
+    font-size: 170px;
+    line-height: 135px;
+  }
+}
+#main .container .texts h6 {
+  font-family: PoppinsBold;
+  text-transform: uppercase;
+  font-size: 2rem;
+  color: white;
+  text-align: center;
+  font-size: 1.2rem;
+  margin-top: 25px;
+}
+@media only screen and (min-width: 768px) {
+  #main .container .texts h6 {
+    font-size: 24px;
+    letter-spacing: 2.5px;
+  }
+}
+@media only screen and (min-width: 1200px) {
+  #main .container .texts h6 {
+    letter-spacing: 7px;
+  }
+}
+#main .container .btn_wrapper {
+  margin-top: 55px;
 }
 
 * {

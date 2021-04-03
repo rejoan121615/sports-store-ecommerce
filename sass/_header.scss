@@ -17,11 +17,15 @@ $icons_size: 2rem;
       grid-column-gap: 35px;
     }
     @include resp ($lg) {
-      grid-template: "menu_icon brand menu social" 1fr / 50px 3fr auto 7fr;
+      grid-template: "brand menu social" 1fr / 3fr auto 7fr;
     }
     .menu_icon {
       grid-area: menu_icon;
       overflow: hidden;
+      // responsive 
+      @include resp ($lg) {
+        display: none;
+      }
       button {
         background: transparent;
         border: none;
