@@ -90,4 +90,10 @@ $xxl: "1900px"
 
 
 // fonts
-$fontList: 
+$fontList: (BebasNeueBold: '../fonts/BebasNeue Bold.ttf', MontserratBold: '../fonts/Montserrat-Bold.otf', MontserratLight: '../fonts/Montserrat-Light.otf', MontserratRegular: '../fonts/Montserrat-Regular.otf', MontserratSemiBold: '../fonts/Montserrat-SemiBold.otf', PoppinsBlack: '../fonts/Poppins-Black.otf', PoppinsBold: '../fonts/Poppins-Bold.otf', PoppinsBoldItalic: '../fonts/Poppins-BoldItalic.otf')
+
+@each $fonts, $url in $fontList
+    @font-face 
+        font-family: $fonts
+        src: url($url)
+
