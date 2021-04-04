@@ -84,6 +84,10 @@
         // btn
         .nonbg_btn {
             margin-top: 25px;
+
+            @include resp ($lg) {
+                margin-top: 40px;
+            }
         }
     }
 }

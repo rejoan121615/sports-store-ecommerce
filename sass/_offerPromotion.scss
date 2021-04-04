@@ -1,0 +1,136 @@
+.container {
+    .promotion_wrapper {
+        background-color: $not_white;
+        display: grid;
+        grid-template:
+            "image" 1fr
+            "poster" auto / 1fr;
+        padding-bottom: 80px;
+
+        max-width: 500px;
+        @include center;
+        // responsive design
+        @include resp($sm) {
+            max-width: 80%;
+        }
+        @include resp($md) {
+            max-width: 100%;
+            grid-template: "poster image" 1fr / 1fr 1fr;
+            align-items: center;
+            padding-bottom: 0px;
+        }
+
+        // highlight images
+        .highlight_img {
+            grid-area: image;
+            // responsiv
+            // images
+            img {
+                display: block;
+                width: 100%;
+            }
+        }
+
+        // promotion texts
+        .promotion_text {
+            grid-area: poster;
+            margin-top: 65px;
+            // responsive design 
+            @include resp ($md) {
+                margin-top: 0px;
+            }
+
+            
+
+
+            // small heading
+            h4 {
+                @include bebas_heading(PoppinsSemiBold, 1rem) {
+                    text-align: center;
+                    color: $not_black;
+                    font-weight: 300;
+                    letter-spacing: 2px;
+                }
+                // responsive design 
+                @include resp ($md) {
+                    font-size: 1.2rem;
+                }
+            }
+
+            // heading
+            .bebas_heading {
+                margin-top: 10px;
+                // responsive 
+                @include resp ($md) {
+                    font-size: 2.7rem;
+                    margin-top: 15px;
+                }
+            }
+            .para {
+                margin-top: 10px;
+                @include center;
+                width: 90%;
+                // responsive 
+                @include resp ($lg) {
+                    margin-top: 35px;
+                    font-size: 18px;
+                    line-height: 23px;
+                }
+            }
+            // price tags
+            .discount_price {
+                margin-top: 25px;
+                font-size: 32px;
+                width: 80%;
+                max-width: 250px;
+                @include center;
+                .actual {
+                    font-size: 20px;
+                    color: $not_black;
+                }
+            }
+            // times
+            .times {
+                max-width: 340px;
+                width: 100%;
+                @include flex;
+                @include center;
+                margin-top: 30px;
+                // responsive
+                @include resp ($md) {
+                    margin-top: 40px;
+                }
+
+                // lists
+                li {
+                    list-style: none;
+                    width: 30%;
+                    @include flex;
+                    flex-direction: column;
+                    padding: 10px;
+                    border-radius: 8px;
+                    text-align: center;
+                    background-color: white;
+                    h1 {
+                        @include header;
+                        font-size: 30px;
+                        color: black;
+                    }
+                    h4 {
+                        @include header;
+                        font-size: 10px;
+                        color: black;
+                        width: 100%;
+                    }
+                }
+            }
+            // button
+            .btn_wrapper {
+                margin-top: 45px;
+                @include resp ($md) {
+                    margin-top: 120px;
+                }
+            }
+        }
+    }
+}

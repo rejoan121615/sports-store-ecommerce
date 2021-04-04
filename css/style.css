@@ -67,6 +67,18 @@
   font-family: PoppinsBoldItalic;
   src: url("../fonts/Poppins-BoldItalic.otf");
 }
+@font-face {
+  font-family: PoppinsSemiBold;
+  src: url("../fonts/Poppins-SemiBold.otf");
+}
+.bebas_heading {
+  font-family: BebasNeueBold;
+  text-transform: uppercase;
+  font-size: 2rem;
+  color: #0d2e57;
+  text-align: center;
+}
+
 .btn_wrapper {
   text-align: center;
 }
@@ -81,6 +93,10 @@
   border-radius: 45px;
   text-transform: uppercase;
   background-color: #3954d9;
+  transition: background-color 0.8s;
+}
+.btn:hover {
+  background-color: #1c2f90;
 }
 
 .para {
@@ -111,6 +127,26 @@
 }
 .nonbg_btn:hover {
   background-color: #030510;
+}
+
+.discount_price {
+  font-family: MontserratBold;
+  text-transform: uppercase;
+  font-size: 16px;
+  color: #3954d9;
+  text-align: left;
+  display: flex;
+  flex-flow: row wrap;
+  justify-content: space-between;
+  width: 250px;
+  margin-left: auto;
+  margin-right: auto;
+  align-items: center;
+}
+.discount_price .actual {
+  text-decoration: line-through;
+  font-size: 14px;
+  font-weight: 300;
 }
 
 #header {
@@ -430,6 +466,154 @@
 }
 .ship_wrapper .items .nonbg_btn {
   margin-top: 25px;
+}
+@media only screen and (min-width: 1200px) {
+  .ship_wrapper .items .nonbg_btn {
+    margin-top: 40px;
+  }
+}
+
+.container .promotion_wrapper {
+  background-color: #f2f0f0;
+  display: grid;
+  grid-template: "image" 1fr "poster" auto/1fr;
+  padding-bottom: 80px;
+  max-width: 500px;
+  margin-left: auto;
+  margin-right: auto;
+}
+@media only screen and (min-width: 768px) {
+  .container .promotion_wrapper {
+    max-width: 80%;
+  }
+}
+@media only screen and (min-width: 992px) {
+  .container .promotion_wrapper {
+    max-width: 100%;
+    grid-template: "poster image" 1fr/1fr 1fr;
+    align-items: center;
+    padding-bottom: 0px;
+  }
+}
+.container .promotion_wrapper .highlight_img {
+  grid-area: image;
+}
+.container .promotion_wrapper .highlight_img img {
+  display: block;
+  width: 100%;
+}
+.container .promotion_wrapper .promotion_text {
+  grid-area: poster;
+  margin-top: 65px;
+}
+@media only screen and (min-width: 992px) {
+  .container .promotion_wrapper .promotion_text {
+    margin-top: 0px;
+  }
+}
+.container .promotion_wrapper .promotion_text h4 {
+  font-family: PoppinsSemiBold;
+  text-transform: uppercase;
+  font-size: 1rem;
+  color: #0d2e57;
+  text-align: center;
+  text-align: center;
+  color: #5c5c5c;
+  font-weight: 300;
+  letter-spacing: 2px;
+}
+@media only screen and (min-width: 992px) {
+  .container .promotion_wrapper .promotion_text h4 {
+    font-size: 1.2rem;
+  }
+}
+.container .promotion_wrapper .promotion_text .bebas_heading {
+  margin-top: 10px;
+}
+@media only screen and (min-width: 992px) {
+  .container .promotion_wrapper .promotion_text .bebas_heading {
+    font-size: 2.7rem;
+    margin-top: 15px;
+  }
+}
+.container .promotion_wrapper .promotion_text .para {
+  margin-top: 10px;
+  margin-left: auto;
+  margin-right: auto;
+  width: 90%;
+}
+@media only screen and (min-width: 1200px) {
+  .container .promotion_wrapper .promotion_text .para {
+    margin-top: 35px;
+    font-size: 18px;
+    line-height: 23px;
+  }
+}
+.container .promotion_wrapper .promotion_text .discount_price {
+  margin-top: 25px;
+  font-size: 32px;
+  width: 80%;
+  max-width: 250px;
+  margin-left: auto;
+  margin-right: auto;
+}
+.container .promotion_wrapper .promotion_text .discount_price .actual {
+  font-size: 20px;
+  color: #5c5c5c;
+}
+.container .promotion_wrapper .promotion_text .times {
+  max-width: 340px;
+  width: 100%;
+  display: flex;
+  flex-flow: row wrap;
+  justify-content: space-between;
+  margin-left: auto;
+  margin-right: auto;
+  margin-top: 30px;
+}
+@media only screen and (min-width: 992px) {
+  .container .promotion_wrapper .promotion_text .times {
+    margin-top: 40px;
+  }
+}
+.container .promotion_wrapper .promotion_text .times li {
+  list-style: none;
+  width: 30%;
+  display: flex;
+  flex-flow: row wrap;
+  justify-content: space-between;
+  flex-direction: column;
+  padding: 10px;
+  border-radius: 8px;
+  text-align: center;
+  background-color: white;
+}
+.container .promotion_wrapper .promotion_text .times li h1 {
+  font-family: PoppinsBold;
+  text-transform: uppercase;
+  font-size: 2rem;
+  color: white;
+  text-align: center;
+  font-size: 30px;
+  color: black;
+}
+.container .promotion_wrapper .promotion_text .times li h4 {
+  font-family: PoppinsBold;
+  text-transform: uppercase;
+  font-size: 2rem;
+  color: white;
+  text-align: center;
+  font-size: 10px;
+  color: black;
+  width: 100%;
+}
+.container .promotion_wrapper .promotion_text .btn_wrapper {
+  margin-top: 45px;
+}
+@media only screen and (min-width: 992px) {
+  .container .promotion_wrapper .promotion_text .btn_wrapper {
+    margin-top: 120px;
+  }
 }
 
 * {
