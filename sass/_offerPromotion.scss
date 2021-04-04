@@ -76,6 +76,9 @@
                     font-size: 18px;
                     line-height: 23px;
                 }
+                @include resp ($xl) {
+                    width: 80%;
+                }
             }
             // price tags
             .discount_price {

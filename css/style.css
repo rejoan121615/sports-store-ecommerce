@@ -549,6 +549,11 @@
     line-height: 23px;
   }
 }
+@media only screen and (min-width: 1400px) {
+  .container .promotion_wrapper .promotion_text .para {
+    width: 80%;
+  }
+}
 .container .promotion_wrapper .promotion_text .discount_price {
   margin-top: 25px;
   font-size: 32px;
