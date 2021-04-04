@@ -1,0 +1,89 @@
+.ship_wrapper {
+    display: grid;
+    grid-template:
+        "shipping" 1fr
+        "delivery" 1fr
+        "liveSupport" 1fr
+        "refund" 1fr / 1fr;
+    // responsive design
+    @include resp($md) {
+        grid-template-columns: repeat(2, 1fr);
+        grid-template-rows: repeat(2, 1fr);
+        grid-template-areas:
+            "shipping delivery"
+            "refund liveSupport";
+    }
+    @include resp($lg) {
+        grid-template-columns: repeat(4, 1fr);
+        grid-template-rows: 1fr;
+        grid-template-areas: "shipping delivery refund liveSupport";
+    }
+
+    // items
+    .shipping {
+        grid-area: shipping;
+    }
+    .refund {
+        grid-area: refund;
+        @include resp($md) {
+            border-bottom: none;
+        }
+    }
+    .fastDelibery {
+        grid-area: delivery;
+    }
+    .support {
+        grid-area: liveSupport;
+    }
+    // common item style
+    .items {
+        text-align: center;
+        @include padX(55px, 55px);
+        border-bottom: 1px solid $not_black;
+        &:last-child {
+            border-bottom: none;
+        }
+        width: 100%;
+        max-width: 325px;
+        @include center;
+        // responsive
+        @include resp($md) {
+            &:nth-child(2) {
+                border-bottom: none;
+            }
+        }
+        @include resp($lg) {
+            border-bottom: none;
+            border-right: 1px solid $not_black;
+            &:last-child {
+                border-right: none;
+            }
+        }
+        // common style
+        i,
+        h3,
+        .para {
+            color: #5c5c5c;
+        }
+        i {
+            font-size: 60px;
+            display: inline-block;
+        }
+        h3 {
+            @include header(BebasNeueBold, 28px, $almost_blue, center);
+            margin-top: 25px;
+        }
+        .para {
+            margin-top: 20px;
+            // responsive
+            @include resp($lg) {
+                width: 95%;
+                @include center;
+            }
+        }
+        // btn
+        .nonbg_btn {
+            margin-top: 25px;
+        }
+    }
+}

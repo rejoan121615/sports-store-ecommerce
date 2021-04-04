@@ -83,6 +83,36 @@
   background-color: #3954d9;
 }
 
+.para {
+  font-family: MontserratLight;
+  text-transform: uppercase;
+  font-size: 14px;
+  color: #5c5c5c;
+  text-align: center;
+  text-transform: none;
+  line-height: 20px;
+}
+.para:first-child {
+  text-transform: uppercase;
+}
+
+.nonbg_btn {
+  font-family: MontserratSemiBold;
+  text-transform: uppercase;
+  font-size: 16px;
+  color: #3954d9;
+  text-align: center;
+  font-weight: 500;
+  text-transform: capitalize;
+  padding: 15px 30px;
+  border-radius: 50px;
+  transition: background-color ease-in-out 0.5s;
+  border: 2px solid #030510;
+}
+.nonbg_btn:hover {
+  background-color: #030510;
+}
+
 #header {
   background-color: #0000005c;
 }
@@ -307,6 +337,99 @@
 }
 #main .container .btn_wrapper {
   margin-top: 55px;
+}
+
+.ship_wrapper {
+  display: grid;
+  grid-template: "shipping" 1fr "delivery" 1fr "liveSupport" 1fr "refund" 1fr/1fr;
+}
+@media only screen and (min-width: 992px) {
+  .ship_wrapper {
+    grid-template-columns: repeat(2, 1fr);
+    grid-template-rows: repeat(2, 1fr);
+    grid-template-areas: "shipping delivery" "refund liveSupport";
+  }
+}
+@media only screen and (min-width: 1200px) {
+  .ship_wrapper {
+    grid-template-columns: repeat(4, 1fr);
+    grid-template-rows: 1fr;
+    grid-template-areas: "shipping delivery refund liveSupport";
+  }
+}
+.ship_wrapper .shipping {
+  grid-area: shipping;
+}
+.ship_wrapper .refund {
+  grid-area: refund;
+}
+@media only screen and (min-width: 992px) {
+  .ship_wrapper .refund {
+    border-bottom: none;
+  }
+}
+.ship_wrapper .fastDelibery {
+  grid-area: delivery;
+}
+.ship_wrapper .support {
+  grid-area: liveSupport;
+}
+.ship_wrapper .items {
+  text-align: center;
+  padding-top: 55px;
+  padding-bottom: 55px;
+  border-bottom: 1px solid #5c5c5c;
+  width: 100%;
+  max-width: 325px;
+  margin-left: auto;
+  margin-right: auto;
+}
+.ship_wrapper .items:last-child {
+  border-bottom: none;
+}
+@media only screen and (min-width: 992px) {
+  .ship_wrapper .items:nth-child(2) {
+    border-bottom: none;
+  }
+}
+@media only screen and (min-width: 1200px) {
+  .ship_wrapper .items {
+    border-bottom: none;
+    border-right: 1px solid #5c5c5c;
+  }
+  .ship_wrapper .items:last-child {
+    border-right: none;
+  }
+}
+.ship_wrapper .items i,
+.ship_wrapper .items h3,
+.ship_wrapper .items .para {
+  color: #5c5c5c;
+}
+.ship_wrapper .items i {
+  font-size: 60px;
+  display: inline-block;
+}
+.ship_wrapper .items h3 {
+  font-family: BebasNeueBold;
+  text-transform: uppercase;
+  font-size: 28px;
+  color: #0d2e57;
+  text-align: center;
+  margin-top: 25px;
+}
+.ship_wrapper .items .para {
+  margin-top: 20px;
+}
+@media only screen and (min-width: 1200px) {
+  .ship_wrapper .items .para {
+    width: 95%;
+    margin-left: auto;
+    margin-right: auto;
+  }
+}
+.ship_wrapper .items .nonbg_btn {
+  margin-top: 25px;
 }
 
 * {

@@ -104,6 +104,8 @@ $MontBold: MontserratBold;
 
 // color variable 
 $blue: #3954d9;
+$not_black: #5c5c5c;
+$almost_blue: #0d2e57;
 
 
 // header style 
@@ -131,4 +133,28 @@ $blue: #3954d9;
     border-radius: 45px;
     text-transform: uppercase;
     background-color: $blue;
+}
+
+// para 
+.para {
+    @include header(MontserratLight, 14px, $not_black, center);
+    text-transform: none;
+    line-height: 20px;
+    &:first-child {
+        text-transform: uppercase;
+    }
+}
+
+// non border btn 
+.nonbg_btn {
+    @include header( MontserratSemiBold, 16px, $blue, center);
+    font-weight: 500;
+    text-transform: capitalize;
+    padding: 15px 30px;
+    border-radius: 50px;
+    transition: background-color ease-in-out 0.5s;
+    border: 2px solid darken($color: $blue, $amount: 50);
+    &:hover {
+        background-color: darken($color: $blue, $amount: 50);
+    }
 }
