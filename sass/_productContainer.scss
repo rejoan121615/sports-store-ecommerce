@@ -1,5 +1,45 @@
 .product_container {
     .product_wrapper {
-        
+        display: grid;
+        grid-template-columns: 1fr;
+        grid-template-rows: auto;
+
+        // responsive
+        @include resp($x_sm) {
+            grid-template-columns: 1fr 1fr;
+        }
+        .items {
+            width: 100%;
+            position: relative;
+            // image
+            img {
+                width: 100%;
+            }
+            // product details
+            .details {
+                position: absolute;
+                left: 25px;
+                bottom: 25px;
+                h3 {
+                    font-family: BebasNeueBold;
+                    font-size: 30px;
+                    color: $almost_blue;
+                    text-transform: uppercase;
+                    text-align: left;
+                }
+
+                h5 {
+                    font-family: MontserratSemiBold;
+                    font-size: 16px;
+                    text-decoration: line-through;
+
+                    span {
+                        margin-right: 10px;
+                        color: $blue;
+                        text-decoration: none;
+                    }
+                }
+            }
+        }
     }
 }
