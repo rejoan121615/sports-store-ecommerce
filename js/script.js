@@ -23,3 +23,6 @@ const ClockTicker = () => {
 setInterval(() => {
     ClockTicker()
 }, 1000);
+
+
+console.log(document.querySelectorAll('.product_wrapper .items'))
