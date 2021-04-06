@@ -1,0 +1,30 @@
+.gallary_container {
+    margin-top: 50px;
+    display: grid;
+    grid-template-columns: 1fr;
+    grid-template-rows: auto;
+    // grid-template-columns: ;
+
+    // responsive 
+    @include resp ($x_sm) {
+        grid-template-columns: repeat(2, 1fr);
+    }
+
+    @include resp ($lg) {
+        grid-template-columns: repeat(4, 1fr);
+    }
+
+    .items {
+        width: 100%;
+        max-width: 400px;
+        @include center;
+        // responsive 
+        @include resp ($sm) {
+            max-width: initial;
+        }
+        img {
+            width: 100%;
+            display: block;
+        }
+    }
+}

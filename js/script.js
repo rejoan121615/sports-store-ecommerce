@@ -26,3 +26,6 @@ setInterval(() => {
 
 
 console.log(document.querySelectorAll('.product_wrapper .items'))
+// -----------------------------------
+// on select full image function 
+// --------------------------------------

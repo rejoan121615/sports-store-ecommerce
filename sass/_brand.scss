@@ -1,0 +1,94 @@
+.brand_container {
+    @extend .gallary_container;
+    @include center;
+    @include padX(0, 0);
+    margin-top: 0px;
+    // responsive
+    @include resp($sm) {
+        grid-template-columns: repeat(3, 1fr);
+    }
+    @include resp($md) {
+        grid-template-columns: repeat(4, 1fr);
+        max-width: 750px;
+    }
+
+    @include resp($lg) {
+        max-width: 900px;
+        margin-top: 0px;
+        // @include padX(35px, 35px);
+    }
+
+    @include resp($xl) {
+        grid-template-columns: repeat(8, 1fr);
+        max-width: unquote($string: $maxWidth);
+        @include padX(0, 0);
+    }
+
+    .items {
+        width: 100%;
+        text-align: center;
+        height: 210px;
+        display: flex;
+        flex-flow: column wrap;
+        justify-content: center;
+        align-content: center;
+        border-bottom: 1px solid black;
+        // border bottom
+
+        // responsive
+        @include resp($x_sm) {
+            height: 245px;
+            &:nth-child(7),
+            &:nth-child(8) {
+                border-bottom: 0px;
+            }
+            &:nth-child(odd) {
+                border-right: 1px solid black;
+            }
+        }
+        @include resp ($sm) {
+            border-right: 1px solid black;
+            &:nth-child(3),
+            &:nth-child(6),
+            &:nth-child(8) {
+                border-right: none;
+            }
+        }
+        @include resp($md) {
+            border-right: 1px solid black!important;
+            &:nth-child(5),
+            &:nth-child(6),
+            &:nth-child(7),
+            &:nth-child(8) {
+                border-bottom: 0px;
+            }
+            &:nth-child(4),
+            &:nth-child(8) {
+                border-right: none!important;
+            }
+        }
+        @include resp($xl) {
+            border: 0px;
+            border-right: 1px solid black!important;
+            height: 160px;
+            &:last-child {
+                border: 0px;
+            }
+            &:nth-child(4) {
+                border-right: 1px solid black!important;
+            }
+        }
+
+        img {
+            display: inline-block;
+            width: 125px;
+            // responsive
+            @include resp(400px) {
+                width: 150px;
+            }
+            @include resp($xl) {
+                width: 120px;
+            }
+        }
+    }
+}
