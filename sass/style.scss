@@ -6,6 +6,7 @@
 @import 'productContainer';
 @import 'imageGallary';
 @import 'brand';
+@import 'footer';
 
 
 // reset style
@@ -18,11 +19,20 @@
 // header background
 
 #background_main_header {
-    background: url("../img/main_bg_sm.png") no-repeat center center;
+    background: url("../img/main-sm.jpg") no-repeat center center;
     background-size: cover;
     // responsive
     @include resp($md) {
-        background-image: url("../img/main_bg.png");
+        background-image: url("../img/main-md.jpg");
+    }
+    @include resp($lg) {
+        background-image: url("../img/main-lg.jpg");
+    }
+    @include resp($xl) {
+        background-image: url("../img/main-xl.jpg");
+    }
+    @include resp($xxl) {
+        background-image: url("../img/main-xxl.jpg");
     }
 }
 a,
@@ -37,3 +47,17 @@ a {
 
 
 // middle section background 
+
+
+// footer section 
+#footer_background {
+    background: url('../img/footer-sm.jpg') no-repeat center center;
+    background-size: cover;
+    // responsive 
+    @include resp ($sm) {
+        background-image: url('../img/footer-lg.jpg');
+    }
+    @include resp ($lg) {
+        background-image: url('../img/footer-bg.jpg');
+    }
+}

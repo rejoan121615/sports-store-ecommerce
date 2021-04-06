@@ -1,116 +1,144 @@
 $icons_size: 2rem;
 
 #header {
-  background-color: #0000005c;
-  .items_container {
-    padding-top: 12px;
-    display: grid;
-    grid-template-columns: repeat( 3, 1fr);
-    grid-template-rows: 50px 80px;
-    grid-template-areas: "brand brand menu_icon" "social social social";
-    color: white;
-    align-items: center;
-        // responsive 
-    @include resp ($sm) {
-      grid-template: "brand social menu_icon" 1fr / 2fr 4fr 0.5fr;
-      @include padX(25px, 30px);
-      grid-column-gap: 35px;
-    }
-    @include resp ($lg) {
-      grid-template: "brand menu social" 1fr / 3fr auto 7fr;
-    }
-    .menu_icon {
-      grid-area: menu_icon;
-      overflow: hidden;
-      // responsive 
-      @include resp ($lg) {
-        display: none;
-      }
-      button {
-        background: transparent;
-        border: none;
-        cursor: pointer;
-        display: block;
-        float: right;
-      }
-      @include resp ($lg) {
-        float: left;
-      }
-      i {
-        font-size: $icons_size;
+    background-color: #0000005c;
+    position: relative;
+    .items_container {
+        padding-top: 12px;
+        display: grid;
+        grid-template-columns: repeat(3, 1fr);
+        grid-template-rows: 50px 80px auto;
+        grid-template-areas: "brand brand menu_icon" "social social social" "nav nav nav";
         color: white;
-        display: inline-block;
-      }            
-        
-        // brand 
-    }
-    .brand {
-      grid-area: brand;
-      font-family: $brand;
-      color: white;
-      font-size: 2rem;
-      i {
-        font-size: 2.2rem;
-        margin-right: 6px;
-      }
+        align-items: center;
+        // responsive
+        @include resp($sm) {
+            grid-template: "brand social menu_icon nav" 1fr 1fr / 2fr 4fr 0.5fr;
+            @include padX(25px, 30px);
+            grid-column-gap: 35px;
+        }
+        @include resp($md) {
+            grid-template:
+                "brand social menu_icon" 1fr
+                "nav nav nav" auto / 200px auto 45px;
+        }
+        @include resp($lg) {
+            grid-template: "brand social nav" 1fr/195px 350px 7fr;
+        }
+        .menu_icon {
+            grid-area: menu_icon;
+            overflow: hidden;
+            cursor: pointer;
+            // responsive
+            @include resp($lg) {
+                display: none;
+            }
+            button {
+                background: transparent;
+                border: none;
+                cursor: pointer;
+                display: block;
+                float: right;
+            }
+            @include resp($lg) {
+                float: left;
+            }
+            i {
+                font-size: $icons_size;
+                color: white;
+                display: inline-block;
+            }
 
-    }
-    // social network 
-    .social_network {
-      grid-area: social;
-      @include flex;
-      width: 100%;
-      max-width: 400px;
-            // responsive 
-      @include resp ($x_sm) {
-        max-width: 500px;
-        @include center;
-      }
-      @include resp ($lg) {
-        width: 100%;
-        margin-left: 0;
-        margin-right: 0;
-        justify-self: end;
-      }
-      a {
-        @include resp ($lg);
-        width: (100%/7);
-        text-align: center;
-        @include padX(15px, 15px);
-                // social icons 
-        &:first-child {
-          border-left: 2.5px solid rgba( #FFFFFF, 0.5);
+            // brand
         }
-        i {
-          color: white;
-          font-size: ($icons_size - 0.3);
-          display: inline-block;
+        .brand {
+            grid-area: brand;
+            font-family: $brand;
+            color: white;
+            font-size: 2rem;
+            i {
+                font-size: 2.2rem;
+                margin-right: 6px;
+            }
         }
-      }
-      .chart {
-        border-left: 2.5px solid rgba( #FFFFFF, 0.5);
-        border-right: 2.5px solid rgba( #FFFFFF, 0.5);
-      }
-    }
-    #nav_bar {
-      display: none;
-      // responsive 
-      @include resp ($lg) {
-        @include flex;
-        justify-self: start;
-      }
-      a {
-        font-family: $MontBold;
-        color: white;
-        font-size: 0.8rem;
-        text-align: center;
-        text-transform: uppercase;
-        // responsive 
-        @include resp ($lg) {
-          padding: 15px;
+        // social network
+        .social_network {
+            grid-area: social;
+            @include flex;
+            width: 100%;
+            max-width: 400px;
+            @include center;
+            // responsive
+            @include resp($x_sm) {
+                max-width: 500px;
+            }
+            @include resp($lg) {
+                width: 100%;
+                margin-left: 0;
+                margin-right: 0;
+                justify-self: end;
+            }
+            a {
+                @include resp($lg);
+                width: (100%/7);
+                text-align: center;
+                @include padX(15px, 15px);
+                // social icons
+                i {
+                    color: white;
+                    font-size: ($icons_size - 0.3);
+                    display: inline-block;
+                }
+            }
         }
-      }
-      
+
+        .nav_bar {
+            grid-area: nav;
+            @include flex;
+            flex-direction: column;
+            justify-content: center;
+            padding: 0px;
+            overflow: hidden;
+            height: 0px;
+            // responsive
+            @include resp($lg) {
+                @include flex;
+                justify-self: end;
+                height: auto;
+                width: 100%;
+                max-width: 550px;
+            }
+            @include resp($xl) {
+                max-width: 700px;
+            }
+            a {
+                font-family: $MontBold;
+                color: white;
+                font-size: 1rem;
+                text-align: center;
+                text-transform: uppercase;
+                @include padX(10px, 10px);
+                // transition
+                transition: color 0.6s ease-in, background-color 0.6s ease-in;
+                // responsive
+                @include resp($lg) {
+                    padding: 7px;
+                    font-size: 15px;
+                }
+                @include resp($xl) {
+                    padding: 15px;
+                    font-size: 1rem;
+                    width: (100% / 6);
+                    &:hover {
+                        background-color: aqua;
+                        color: white;
+                    }
+                }
+            }
+        }
+        .active {
+            height: auto;
+            @include padX(25px, 25px);
+        }
     }
-  }
 }

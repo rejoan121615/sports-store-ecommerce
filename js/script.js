@@ -29,3 +29,24 @@ console.log(document.querySelectorAll('.product_wrapper .items'))
 // -----------------------------------
 // on select full image function 
 // --------------------------------------
+
+
+
+
+// disable a tag 
+const getAllA = document.querySelectorAll('a');
+
+getAllA.forEach( (item, index) => {
+    item.onclick = () => false;
+});
+
+
+
+// nav bar 
+const getNavBtn = document.querySelector('.menu_icon .menu_btn');
+const getNav = document.querySelector('.nav_bar')
+console.log(getNavBtn);
+
+getNavBtn.onclick = () => {
+    getNav.classList.toggle('active');
+}
