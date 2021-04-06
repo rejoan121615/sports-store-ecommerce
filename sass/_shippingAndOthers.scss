@@ -59,6 +59,10 @@
                 border-right: none;
             }
         }
+        @include resp ($xl) {
+            width: 100%;
+            max-width: initial;
+        }
         // common style
         i,
         h3,

@@ -3,11 +3,10 @@
 @import "main";
 @import "shippingAndOthers";
 @import "offerPromotion";
-@import 'productContainer';
-@import 'imageGallary';
-@import 'brand';
-@import 'footer';
-
+@import "productContainer";
+@import "imageGallary";
+@import "brand";
+@import "footer";
 
 // reset style
 * {
@@ -45,19 +44,33 @@ a {
     color: #484848;
 }
 
+// middle section background
 
-// middle section background 
-
-
-// footer section 
+// footer section
 #footer_background {
-    background: url('../img/footer-sm.jpg') no-repeat center center;
+    background: url("../img/footer-sm.jpg") no-repeat center center;
     background-size: cover;
-    // responsive 
-    @include resp ($sm) {
-        background-image: url('../img/footer-lg.jpg');
+    // responsive
+    @include resp($sm) {
+        background-image: url("../img/footer-lg.jpg");
     }
-    @include resp ($lg) {
-        background-image: url('../img/footer-bg.jpg');
+    @include resp($lg) {
+        background-image: url("../img/footer-bg.jpg");
+    }
+}
+
+//
+#middle {
+    .container {
+        box-shadow: -10px 50px 50px #00000085, 10px 50px 50px #00000085;
+        @include resp($md) {
+            &:first-child {
+                margin-top: -80px;
+                background-color: white;
+            }
+            &:last-child {
+                margin-bottom: -60px;
+            }
+        }
     }
 }

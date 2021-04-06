@@ -3,7 +3,7 @@
     .container {
         height: 600px;
         @include resp($sm) {
-            height: 700px;
+            height: 820px;
         }
 
         @include resp($lg) {
@@ -14,21 +14,21 @@
         }
         .texts {
             width: 100%;
-            margin-top: 175px;
+            margin-top: initial;
+            padding-top: 110px;
             // responsive
             @include resp($sm) {
                 margin-top: initial;
-                padding-top: 180px;
+                padding-top: 200px;
             }
             @include resp($md) {
                 width: 50%;
             }
             @include resp($lg) {
-                margin-top: 225px;
             }
 
             @include resp($xl) {
-                margin-top: 200px;
+                margin-top: initial;
             }
 
             // responsive

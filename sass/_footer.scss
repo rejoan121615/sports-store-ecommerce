@@ -6,43 +6,46 @@
         padding-top: 60px;
         grid-row-gap: 45px;
         border-bottom: 1px solid white;
-    
-        // responsive 
-        @include resp ($sm) {
+
+
+        // responsive
+        @include resp($sm) {
             grid-template-columns: 1fr 1fr;
             grid-template-rows: auto auto;
             grid-column-gap: 25px;
-            @include padX(70px, 70px)
-         }
-         @include resp ($lg) {
-             grid-template-columns: repeat(3, 1fr);
-             grid-template-rows: 1fr auto;
-             @include padX(120px, 120px);
-         }
-         @include resp ($xl) {
-             grid-template-columns: repeat(2, 1fr) 1.5fr 2.5fr;
-             grid-template-rows: 1fr;
-             align-items: start;
-             grid-template-areas: '. . . social';
-             
-         }
-        // sections 
-        .link_wrapper, .stay_connected {
+        }
+        @include resp($md) {
+            @include padX(150px, 150px);
+        }
+        @include resp($lg) {
+            grid-template-columns: repeat(3, 1fr);
+            grid-template-rows: 1fr auto;
+            @include padX(150px, 120px);
+        }
+        @include resp($xl) {
+            grid-template-columns: repeat(2, 1fr) 1.5fr 2.5fr;
+            grid-template-rows: 1fr;
+            align-items: start;
+            grid-template-areas: ". . . social";
+        }
+        // sections
+        .link_wrapper,
+        .stay_connected {
             h4 {
                 @include header;
                 color: blue;
-                @include resp ($lg) {
+                @include resp($lg) {
                     text-align: left;
                 }
             }
-            // links 
+            // links
             .links_list {
                 margin-top: 25px;
                 li {
                     list-style: none;
                     text-align: center;
-                    // responsive 
-                    @include resp ($lg) {
+                    // responsive
+                    @include resp($lg) {
                         text-align: left;
                     }
                     a {
@@ -50,27 +53,27 @@
                         display: inline-block;
                         font-size: 16px;
                         color: white;
-                        // responsive 
-                        @include resp ($lg) {
+                        // responsive
+                        @include resp($lg) {
                             text-align: left;
                         }
                     }
                 }
             }
 
-            // stay connected 
+            // stay connected
             .social_list {
                 @include flex;
                 margin-top: 25px;
-                // responsive 
-                @include resp ($x_sm) {
+                // responsive
+                @include resp($x_sm) {
                     max-width: 700px;
                     @include center;
                 }
-                @include resp ($md) {
+                @include resp($md) {
                     max-width: 400px;
                 }
-                @include resp ($xl) {
+                @include resp($xl) {
                     max-width: 600px;
                     margin-left: 0;
                     margin-right: 0;
@@ -80,63 +83,61 @@
                     width: 30%;
                     text-align: center;
                     margin-bottom: 25px;
-                    // responsive 
-                    @include resp ($x_sm) {
+                    // responsive
+                    @include resp($x_sm) {
                         width: (90% / 6);
-
                     }
-                    @include resp ($sm) {
+                    @include resp($sm) {
                         width: (90% / 3);
                     }
-                    @include resp ($xl) {
+                    @include resp($xl) {
                         width: (100% / 6);
                     }
                     img {
                         display: inline-block;
                         width: 65px;
                     }
-                    
-                    // margin bottom 
-                    &:nth-child(n+4) {
+
+                    // margin bottom
+                    &:nth-child(n + 4) {
                         margin-bottom: 0px;
                     }
                 }
             }
-            // form section 
+            // form section
             .form {
                 margin-top: 40px;
                 form {
                     margin-top: 35px;
-                    // responsive 
-                    @include resp ($x_sm) {
+                    // responsive
+                    @include resp($x_sm) {
                         @include flex;
                         align-items: center;
                         max-width: 500px;
                         @include center;
-
                     }
-                    @include resp ($lg) {
+                    @include resp($lg) {
                         margin-left: initial;
                         margin-right: initial;
                         margin-top: 15px;
                     }
                     input {
                         width: 100%;
-                         padding: 10px 18px;
+                        padding: 10px 18px;
                         border: none;
                         border-radius: 8px;
                         @extend .para;
                         text-align: left;
-                        // responsive 
-                        @include resp ($x_sm) {
+                        // responsive
+                        @include resp($x_sm) {
                             width: 65%;
                         }
                     }
                     .btn_wrapper {
                         text-align: center;
                         margin-top: 35px;
-                        // responsive 
-                        @include resp ($x_sm) {
+                        // responsive
+                        @include resp($x_sm) {
                             width: 28%;
                             margin-top: 0px;
                         }
@@ -148,23 +149,21 @@
                     }
                 }
             }
-        
         }
 
-        // stay connected 
+        // stay connected
         .stay_connected {
-            @include resp ($lg) {
+            @include resp($lg) {
                 grid-row: 2/3;
                 grid-column: 1/ -1;
                 display: grid;
                 grid-template-columns: 1fr 1fr;
-                grid-template-rows:1fr;
-                grid-template: 
-                                ". ."
-                                "social form"
-                ;
+                grid-template-rows: 1fr;
+                grid-template:
+                    ". ."
+                    "social form";
             }
-            @include resp ($xl) {
+            @include resp($xl) {
                 grid-row: initial;
                 grid-column: initial;
                 grid-area: social;
@@ -174,8 +173,7 @@
     }
 }
 
-
-// footer style 
+// footer style
 #footer {
     .container {
         text-align: center;
